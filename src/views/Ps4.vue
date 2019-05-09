@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="ps4">
     <!-- START CONTENT -->
     <div>
       <b-card-group deck>
@@ -13,11 +13,11 @@
               img-top
             >
             <div v-for="variant0 in variants0" :key="variant0.variantId">
-              <b-button block variant="outline-dark" size="sm" @click="goTodetail(variant0.variantId)" @mouseover="updateProduct0(variant0.variantImage)">{{variant0.variantConsole}}</b-button>
+              <b-button block variant="outline-dark" size="sm" @click="goTodetail(variant0.variantId)" @mouseover="updateProduct0(variant0.variantImage0)">{{variant0.variantConsole}}</b-button>
             </div>
               <b-card-text>
                 <span>{{descricao[0]}}</span>
-                <h6 style="color: green; text-align: center"><i class="fas fa-dollar-sign" style="color: green"></i> 69.00</h6>
+                <h6 style="color: green; text-align: center"><i class="fas fa-dollar-sign" style="color: green"></i> 69,00</h6>
                     <div style="text-align: center">
                     <h2 v-if="qtde0 > 10">Em Estoque</h2>
                     <h2 v-else-if="qtde0 <= 10 && qtde0 > 0">Ultimas Unidades</h2>
@@ -37,7 +37,7 @@
               img-top
             >
             <div v-for="variant1 in variants1" :key="variant1.variantId">
-              <b-button block variant="outline-dark" size="sm" @click="goTodetail(variant1.variantId)" @mouseover="updateProduct1(variant1.variantImage)">{{variant1.variantConsole}}</b-button>
+              <b-button block variant="outline-dark" size="sm" @click="goTodetail(variant1.variantId)" @mouseover="updateProduct1(variant1.variantImage1)">{{variant1.variantConsole}}</b-button>
             </div>
               <b-card-text>
                 <span>{{descricao[1]}}</span>
@@ -61,7 +61,7 @@
               img-top
             >
             <div v-for="variant2 in variants2" :key="variant2.variantId">
-              <b-button block variant="outline-dark" size="sm" @click="goTodetail(variant2.variantId)" @mouseover="updateProduct2(variant2.variantImage)">{{variant2.variantConsole}}</b-button>
+              <b-button block variant="outline-dark" size="sm" @click="goTodetail(variant2.variantId)" @mouseover="updateProduct2(variant2.variantImage2)">{{variant2.variantConsole}}</b-button>
             </div>
               <b-card-text>
                 <span>{{descricao[2]}}</span>
@@ -89,7 +89,7 @@
 // @ is an alias to /src
 
 export default {
-  name: 'home',
+  name: 'ps4',
   data() {
     return {
       carrinho: 0,
@@ -105,52 +105,51 @@ export default {
         {
           variantId: 1,
           variantConsole: "PS4",
-          variantImage: "//i.imgur.com/KJ9wgar.jpg"
+          variantImage0: "//i.imgur.com/KJ9wgar.jpg"
         },
         {
           variantId: 2,
           variantConsole: "Xbox One",
-          variantImage: "//i.imgur.com/zCmN9i6.png"
+          variantImage0: "//i.imgur.com/zCmN9i6.png"
         },
         {
           variantId: 3,
           variantConsole: "PC",
-          variantImage: "//i.imgur.com/Rz5sbypg.jpg"
+          variantImage0: "//i.imgur.com/Rz5sbypg.jpg"
         }
       ],
       variants1: [
         {
-          variantId: 4,
+          variantId: 1,
           variantConsole: "PS4",
-          variantImage: "//i.imgur.com/MQKn6xn.jpg"
+          variantImage1: "//i.imgur.com/MQKn6xn.jpg"
         },
         {
-          variantId: 5,
+          variantId: 2,
           variantConsole: "Xbox One",
-          variantImage: "//i.imgur.com/MlEbj8C.jpg"
+          variantImage1: "//i.imgur.com/MlEbj8C.jpg"
         },
         {
-          variantId: 6,
+          variantId: 3,
           variantConsole: "PC",
-          variantImage: "//i.imgur.com/DwiiHiq.jpg"
-
+          variantImage1: "//i.imgur.com/DwiiHiq.jpg"
         }
       ],
       variants2: [
         {
-          variantId: 7,
+          variantId: 1,
           variantConsole: "PS4",
-          variantImage: "//i.imgur.com/q79BOu5.jpg"
+          variantImage2: "//i.imgur.com/q79BOu5.jpg"
         },
         {
-          variantId: 8,
+          variantId: 2,
           variantConsole: "Xbox One",
-          variantImage: "//i.imgur.com/FvfREpv.jpg"
+          variantImage2: "//i.imgur.com/FvfREpv.jpg"
         },
         {
-          variantId: 9,
+          variantId: 3,
           variantConsole: "PC",
-          variantImage: "//i.imgur.com/eSyJZu7.png"
+          variantImage2: "//i.imgur.com/eSyJZu7.png"
         }
       ],
     };

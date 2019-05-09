@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import Pc from './views/Pc.vue'
+import Ps4 from './views/Ps4.vue'
+import Xbox from './views/Xbox.vue'
+import Details from './views/Details.vue'
 
 Vue.use(Router)
 
@@ -12,6 +16,26 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home
+    },
+    {
+    path: '/pc',
+    name: 'pc',
+    component: Pc
+    },
+    {
+    path: '/ps4',
+    name: 'ps4',
+    component: Ps4
+    },
+    {
+    path: '/xbox',
+    name: 'xbox',
+    component: Xbox
+    },
+    {
+      path: '/details/:Pid',
+      name: 'details',
+      component: Details
     },
     {
       path: '/about',
