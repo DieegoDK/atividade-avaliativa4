@@ -34,6 +34,7 @@
 
 
 <script>
+import { mapState } from 'vuex';
 export default {
 		name:'details',
 		data(){
@@ -125,6 +126,11 @@ export default {
         ]
       }
 },
+computed: {
+    ...mapState({
+    carrinho: 'carrinho'
+    })
+  },
 methods:{
   voltar: function(){
     this.$router.go(-1)

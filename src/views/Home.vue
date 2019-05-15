@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    
     <!-- START CONTENT -->
     <div>
       <b-card-group deck>
@@ -87,20 +88,16 @@
 
 <script>
 // @ is an alias to /src
-
+import { mapState } from 'vuex';
 export default {
   name: 'home',
   data() {
     return {
-      carrinho: 0,
       produto: ["Grand theft Auto V", "Fifa 19", "Need For Speed: Payback"],
       produtoImage0: "//i.imgur.com/KJ9wgar.jpg",
       produtoImage1: "//i.imgur.com/MQKn6xn.jpg",
       produtoImage2: "//i.imgur.com/q79BOu5.jpg",
       descricao: ["Estudio: Rockstar Games", "Estudio: Electronic Arts, EA Sports", "Estudio: Electronic Arts, Ghost Games"],
-      qtde0: 11,
-      qtde1: 11,
-      qtde2: 11,
       variants0: [
         {
           variantId: 1,
@@ -155,6 +152,14 @@ export default {
       ],
     };
   },
+  computed: {
+    ...mapState({
+    carrinho: 'carrinho',
+    qtde0: 'qtde0',
+    qtde1: 'qtde1',
+    qtde2: 'qtde2',
+    })
+  },
   methods: {
     updateProduct0(variantImage0) {
       this.produtoImage0 = variantImage0;
@@ -166,22 +171,22 @@ export default {
       this.produtoImage2 = variantImage2;
     },
     comprar0: function() {
-      this.$emit('Carrinho', this.carrinho += 1);
-      this.$emit('Qtde0', this.qtde0 -= 1);
+      this.$emit('Carrinho', this.$store.state.carrinho++);
+      this.$emit('Qtde0', this.$store.state.qtde0--);
     },
     comprar1: function() {
-      this.$emit('Carrinho', this.carrinho += 1);
-      this.$emit('Qtde1', this.qtde1 -= 1);
+      this.$emit('Carrinho', this.$store.state.carrinho++);
+      this.$emit('Qtde1', this.$store.state.qtde1--);
     },
     comprar2: function() {
-      this.$emit('Carrinho', this.carrinho += 1);
-      this.$emit('Qtde2', this.qtde2 -= 1);
+      this.$emit('Carrinho', this.$store.state.carrinho++);
+      this.$emit('Qtde2', this.$store.state.qtde2--);
     },
     goTodetail(prodId) {
     let proId=prodId
     this.$router.push({name:'details',params:{Pid:proId}})
   }
-  }
+  },
 }
 
 </script>

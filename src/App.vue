@@ -46,6 +46,11 @@
               <span class="fas fa-info"></span> About
             </b-nav-item>
             </router-link>
+            <router-link to="/contact">
+            <b-nav-item href="#contact">
+              <span class="fas fa-at"></span> Contact
+            </b-nav-item>
+            </router-link>
            
           </b-navbar-nav>
 
@@ -55,10 +60,9 @@
               <b-nav-item href="#">
                 <span class="fas fa-shopping-cart"></span>
                 Carrinho
-                <b-badge variant="secondary">{{carrinho}}</b-badge>
+                <b-badge variant="secondary">{{ this.$store.state.carrinho }}</b-badge>
               </b-nav-item>
             </b-navbar-nav>
-
             <b-nav-item-dropdown right>
               <!-- Using 'button-content' slot -->
               <template slot="button-content">
@@ -188,10 +192,11 @@
 </style>
 
 <script>
+import axios from 'axios'
+import config from './config/config'
 export default {
    data() {
     return {
-    carrinho: 0,
     sliding: null,
     }
    },

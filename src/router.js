@@ -5,6 +5,7 @@ import Pc from './views/Pc.vue'
 import Ps4 from './views/Ps4.vue'
 import Xbox from './views/Xbox.vue'
 import Details from './views/Details.vue'
+import Contact from './views/Contact.vue'
 
 Vue.use(Router)
 
@@ -44,6 +45,11 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
-    }
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      component: Contact
+      },
   ]
 })
